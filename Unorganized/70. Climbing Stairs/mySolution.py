@@ -14,6 +14,17 @@ class Solution:
         
         return count
     
+class NeetSolution:
+    def climbStairs(self, n: int, count: int = 0) -> int:
+        one, two = 1,1
+        
+        for i in range(n-1):
+            temp = one 
+            one = one + two
+            two = temp
+        
+        return one
+    
 
 class OptimalSolution:
     def climbStairs(self, n: int, memo: None | Dict[int, int]=None) -> int:
@@ -41,6 +52,8 @@ class OptimalSolution:
 
 mySol: Solution = Solution()
 optSol: OptimalSolution = OptimalSolution()
+neetSol: NeetSolution = NeetSolution()
 
-print(mySol.climbStairs(4))
-print(optSol.climbStairs(4))
+# print(mySol.climbStairs(4))
+# print(optSol.climbStairs(4))
+print(neetSol.climbStairs(4))
